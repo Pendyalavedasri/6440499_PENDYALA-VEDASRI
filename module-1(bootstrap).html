@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Party Portal - Bootstrap 5 Demo</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    .party-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+    .fixed-footer {
+      z-index: 1030;
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+  <div class="container">
+    <a class="navbar-brand" href="#"><i class="bi bi-balloon-heart"></i> Party Portal</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" />
+        <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- Heading -->
+  <h1 class="text-center mb-4 text-primary">Welcome to the Party Portal</h1>
+
+  <!-- Cards Grid -->
+  <div class="row mb-4">
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm">
+        <img src="https://images.pexels.com/photos/2072181/pexels-photo-2072181.jpeg?auto=compress&w=600" alt="Birthday Party" class="party-img card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">Birthday Bash</h5>
+          <p class="card-text">Celebrate with us! Music, cake, and fun.</p>
+          <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#infoModal">Details</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm">
+        <img src="https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg?auto=compress&w=600" alt="Neon Night" class="party-img card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">Neon Night</h5>
+          <p class="card-text">Glow and dance all night long.</p>
+          <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#infoModal">Details</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm">
+        <!-- This is a working Dance Fest image from Unsplash -->
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=compress&w=600" alt="Dance Fest" class="party-img card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">Dance Fest</h5>
+          <p class="card-text">Join the biggest dance party this summer.</p>
+          <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#infoModal">Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event Table -->
+  <table class="table table-bordered table-striped mb-4">
+    <caption class="fw-bold text-primary fs-5">Upcoming Events</caption>
+    <thead class="table-primary">
+      <tr>
+        <th>Event</th>
+        <th>Date</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Birthday Bash</td><td>June 10</td><td>Community Hall</td></tr>
+      <tr><td>Neon Night</td><td>June 15</td><td>City Park</td></tr>
+      <tr><td>Dance Fest</td><td>June 20</td><td>Downtown Club</td></tr>
+    </tbody>
+    <tfoot>
+      <tr><th colspan="3" class="text-center">More events coming soon!</th></tr>
+    </tfoot>
+  </table>
+
+  <!-- Party Video -->
+  <section class="mb-4">
+    <h2 class="mb-3 text-primary">Party Video</h2>
+    <video width="100%" controls poster="https://images.pexels.com/photos/2072181/pexels-photo-2072181.jpeg?auto=compress&w=400">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+      <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg" />
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="mb-4">
+    <h2 class="mb-3 text-primary">Contact Us</h2>
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input id="name" type="text" class="form-control" placeholder="Your name" required />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" type="email" class="form-control" placeholder="Your email" required />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </section>
+
+  <!-- Visibility & Display Demo -->
+  <section>
+    <h2 class="mb-3 text-primary">Visibility & Display Demo</h2>
+    <div class="border p-3 mb-2 bg-light">I am visible</div>
+    <div class="border p-3 mb-2 bg-light" style="visibility:hidden;">I am hidden (visibility: hidden)</div>
+    <div class="border p-3 mb-2 bg-light" style="display:none;">I am gone (display: none)</div>
+    <p>Open dev tools to inspect the difference.</p>
+  </section>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="infoModalLabel">Event Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>More information about this party event will be available soon.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer with icons -->
+<footer class="bg-dark text-white text-center py-3 mt-5">
+  <div>
+    <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+    <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+    <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+    <a href="#" class="text-white"><i class="bi bi-envelope"></i></a>
+  </div>
+  <div class="mt-2">&copy; 2025 Party Community Portal</div>
+</footer>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
